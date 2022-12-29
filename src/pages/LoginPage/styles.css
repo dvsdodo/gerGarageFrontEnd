@@ -30,3 +30,26 @@
     text-align: center;
     margin-top: 1rem;
 }
+
+#login .text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+#login .txt1 {
+    font-size: 14px;
+    color: #d2caf8;
+    line-height: 01;
+    text-decoration: none;
+    padding-right: 5px;
+}
+
+#login .txt2 {
+    font-size: 14px;
+    color: #2c1710;
+    line-height: 1;
+    text-decoration: none;
+}

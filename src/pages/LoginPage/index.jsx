@@ -39,7 +39,10 @@ const LoginPage = () => {
                 </div>
                 <div className="actions">
                     <button type="submit">Enter</button>
-                    <button type="submit">New User</button>
+                </div>
+                <div className="text-center">
+                    <span className="txt1">Do you already have an account? </span>
+                    <a href="/createUser" className="txt2">Create account.</a>
                 </div>
             </form>
         </div>

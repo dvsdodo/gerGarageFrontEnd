@@ -5,13 +5,13 @@ import { getUsers } from "../../services/api";
 const HomePage = () => {
     const { authenticated, logout } = useContext(AuthContext);
     const [users, setUsers] = useState([]);
-    //const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         (async () => {
             const response = await getUsers();
-            setUsers(response.data);
-            //setLoading(false);
+            setUsers(response.data.result);
+            setLoading(false);
         })();
     }, []);
 
@@ -19,9 +19,9 @@ const HomePage = () => {
         logout();
     };
 
-    /*if (loading) {
+    if (loading) {
         return <div className="loading">Loading...</div>;
-    }*/
+    };
 
     return (
         <>

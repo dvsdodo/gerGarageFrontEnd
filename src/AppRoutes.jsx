@@ -9,6 +9,7 @@ import {
 
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
+import CreateUserPage from './pages/CreateUser';
 
 import { AuthProvider, AuthContext } from "./contexts/auth";
 
@@ -33,6 +34,7 @@ const AppRoutes = () => {
                 <Routes>
                     <Route exact path="/login" element={<LoginPage />} />
                     <Route exact path="/" element={<Private><HomePage /></Private>} />
+                    <Route exact path="/createUser" element={<CreateUserPage />} />
                 </Routes>
             </AuthProvider>
         </Router>
