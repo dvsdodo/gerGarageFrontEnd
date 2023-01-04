@@ -30,7 +30,7 @@ const LoginPage = () => {
                     onChange={(e) => setUsername(e.target.value)} />
                 </div>
                 <div className="field">
-                    <label htmlFor="password">Senha</label>
+                    <label htmlFor="password">Password</label>
                     <input type="password" 
                     name="password" 
                     id="password"

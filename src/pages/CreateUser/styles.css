@@ -1,0 +1,55 @@
+#createUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+
+#createUser .form {
+    background-color: rgb(66, 63, 253);
+    width: 100%;
+    max-width: 480px;
+    padding: 0.5rem;
+}
+
+#createUser .field {
+    padding-bottom: 0.5rem;
+}
+
+#createUser .field label {
+    display: block;
+}
+
+#createUser .field input {
+    width: 100%;
+}
+
+#createUser .actions {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#createUser .text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+#createUser .txt1 {
+    font-size: 14px;
+    color: #d2caf8;
+    line-height: 01;
+    text-decoration: none;
+    padding-right: 5px;
+}
+
+#createUser .txt2 {
+    font-size: 14px;
+    color: #2c1710;
+    line-height: 1;
+    text-decoration: none;
+}

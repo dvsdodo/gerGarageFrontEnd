@@ -11,3 +11,7 @@ export const createSession = async (username, password) => {
 export const getUsers = async () => {
     return api.get("/listUsers");
 };
+
+export const createUser = async (name, phone_number, username, password) => {
+    return api.post("/createUser", { name, phone_number, username, password });
+};
