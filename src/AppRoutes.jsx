@@ -12,6 +12,8 @@ import HomePage from './pages/HomePage';
 import CreateUserPage from './pages/CreateUser';
 
 import { AuthProvider, AuthContext } from "./contexts/auth";
+import Vehicle from "./pages/Vehicle";
+import Booking from "./pages/Booking";
 
 const AppRoutes = () => {
     const Private = ({ children }) => {
@@ -35,6 +37,8 @@ const AppRoutes = () => {
                     <Route exact path="/login" element={<LoginPage />} />
                     <Route exact path="/" element={<Private><HomePage /></Private>} />
                     <Route exact path="/createUser" element={<CreateUserPage />} />
+                    <Route exact path="/vehicle" element={<Vehicle />} />
+                    <Route exact path="/booking" element={<Booking />} />
                 </Routes>
             </AuthProvider>
         </Router>
