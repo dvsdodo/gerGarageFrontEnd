@@ -2,10 +2,11 @@ import { Form, FormGroup, Input, Label } from "reactstrap";
 import SubmitButton from "./form/submitButton";
 import "./BookingForm.css";
 import { useContext, useEffect, useState } from "react";
-import { getBookingService, getVehicle } from "../services/api";
+import { getBookingService, getSlots, getVehicle } from "../services/api";
 import SelectBookingService from "./form/selectBookingService";
 import SelectVehicle from "./form/selectVehicle";
 import { AuthContext } from "../contexts/auth";
+import SelectSlots from "./form/SelectSlots";
 
 function BookingForm({ btnText }) {
 
@@ -13,13 +14,16 @@ function BookingForm({ btnText }) {
     const [BookingService, setBookingService] = useState([]);
     const [Vehicle, setVehicle] = useState([]);
     const [BookingDate, setBookingDate] = useState([]);
+    const [Slots, setSlots] = useState([]);
     const [ServiceSelected, setServiceSelected] = useState([]);
     const [VehicleSelected, setVehicleSelected] = useState([]);
+    const [SlotsSelected, setSlotsSelected] = useState([]);
 
     const { newBooking } = useContext(AuthContext);
     const [id_booking_service, setIdBookingService] = useState(0);
     const [id_vehicle, setIdVehicle] = useState(0);
     const [id_status, setIdStatus] = useState(1);
+    const [id_slots, setIdSlots] = useState(0);
     const [date, setDate] = useState("");
 
     useEffect(() => {
@@ -33,6 +37,13 @@ function BookingForm({ btnText }) {
         (async () => {
             const response = await getVehicle();
             setVehicle(response.data.result);
+        })();
+    }, []);
+
+    useEffect(() => {
+        (async () => {
+            const response = await getSlots();
+            setSlots(response.data.result);
         })();
     }, []);
 
@@ -63,11 +74,22 @@ function BookingForm({ btnText }) {
         });
     };
 
+    function handleSlots(e) {
+        setIdSlots(parseInt(e.target.value))
+        setSlotsSelected({
+            ...SlotsSelected,
+            Slots: {
+                id_slots: e.target.value,
+                slots_name: e.target.options[e.target.selectedIndex].text,
+            }
+        });
+    };
+
     const handleBooking = async (e) => {
         e.preventDefault();
         await setIdStatus(1);
-        console.log("submit", { id_vehicle, id_status, date, id_booking_service });
-        await newBooking({ id_vehicle, id_status, date, id_booking_service });
+        console.log("submit", { id_vehicle, id_status, date, id_booking_service, id_slots });
+        await newBooking({ id_vehicle, id_status, date, id_booking_service, id_slots });
     };
 
     return (
@@ -85,31 +107,14 @@ function BookingForm({ btnText }) {
                     value={BookingDate.name}
                 />
             </FormGroup>
-            <FormGroup>
-                <Label for="exampleSelect">
-                    Select
-                </Label>
-                <Input
-                    id="exampleSelect"
-                    name="select"
-                    type="select"
-                >
-                    <option>
-                        08:00 AM - 10:00 AM
-                    </option>
-                    <option>
-                        10:00 AM - 00:00 PM
-                    </option>
-                    <option>
-                        01:00 PM - 03:00 PM
-                    </option>
-                    <option>
-                        03:00 PM - 05:00 PM
-                    </option>
-                </Input>
-            </FormGroup>
             <FormGroup className="label">
-
+                <SelectSlots 
+                    name="id_slots"
+                    text="Select a Time"
+                    options={Slots}
+                    handleOnChange={handleSlots}
+                    value={SlotsSelected.Slots ? SlotsSelected.Slots.id_slots : ""}               
+                />
                 <SelectBookingService
                     name="id_booking_service"
                     text="Choose a Service"

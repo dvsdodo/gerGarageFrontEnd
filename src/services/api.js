@@ -32,6 +32,10 @@ export const getVehicle = async () => {
     return api.get("/listVehicle");
 };
 
+export const getSlots = async () => {
+    return api.get("/listSlots");
+};
+
 export const createUser = async (name, phone_number, username, password) => {
     return api.post("/createUser", { name, phone_number, username, password });
 };
@@ -40,6 +44,6 @@ export const createVehicle = async (id_user, id_make, id_engine_type, vehicle_co
     return api.post("/createVehicle", { id_user, id_make, id_engine_type, vehicle_comment, vehicle_licence });
 };
 
-export const createBooking = async (id_vehicle, id_status, date, id_booking_service) => {
-    return api.post("/createBooking", { id_vehicle, id_status, date, id_booking_service });
+export const createBooking = async (id_vehicle, id_status, date, id_booking_service, id_slots) => {
+    return api.post("/createBooking", { id_vehicle, id_status, date, id_booking_service, id_slots });
 };

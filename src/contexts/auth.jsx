@@ -75,8 +75,8 @@ export const AuthProvider = ({ children }) => {
         console.log(response.data);
     };
 
-    const newBooking = async (id_vehicle, id_status, date, id_booking_service) => {
-        const response = await createBooking(id_vehicle, id_status, date, id_booking_service);
+    const newBooking = async (id_vehicle, id_status, date, id_booking_service, id_slots) => {
+        const response = await createBooking(id_vehicle, id_status, date, id_booking_service, id_slots);
         console.log(response.data);
     };
 
