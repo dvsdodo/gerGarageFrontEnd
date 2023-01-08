@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: url("https://img.elo7.com.br/product/zoom/2FF35AC/papel-de-parede-tijolo-a-vista-tijolinho-preto-vintage-3-5m-sala.jpg");
+    background-size: cover;
 }
 
 .content-wrap{

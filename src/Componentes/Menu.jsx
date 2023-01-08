@@ -12,7 +12,6 @@ import {
   NavLink,
   Button
 } from 'reactstrap';
-//import { Button } from 'bootstrap';
 
 function Menu(args) {
   const { logout } = useContext(AuthContext);

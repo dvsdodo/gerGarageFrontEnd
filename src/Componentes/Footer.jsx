@@ -7,25 +7,22 @@ const Footer = () => {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <h4>THIS MEMES INC</h4>
+                        <h4>GER'S GARAGE</h4>
                         <ul className="list-unstyled">
-                            <li>333-555-5415</li>
-                            <li>Dublin, Ireland</li>
-                            <li>Henry Street, Dunblin 01</li>
+                            <li>Since</li>
+                            <li>1988</li>
                         </ul>
                     </div>
                     <div className="col">
-                        <h4>THIS MEMES INC</h4>
+                        <h4>About US</h4>
                         <ul className="list-unstyled">
                             <li>333-555-5415</li>
-                            <li>Dublin, Ireland</li>
-                            <li>Henry Street, Dunblin 01</li>
+                            <li>gersgarage@gmail.com</li>
                         </ul>
                     </div>
                     <div className="col">
-                        <h4>THIS MEMES INC</h4>
+                        <h4>ADRESS</h4>
                         <ul className="list-unstyled">
-                            <li>333-555-5415</li>
                             <li>Dublin, Ireland</li>
                             <li>Henry Street, Dunblin 01</li>
                         </ul>

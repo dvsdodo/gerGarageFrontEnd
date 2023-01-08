@@ -1,0 +1,13 @@
+.btn-submit {
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 0.7em 1.2em;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-submit:hover {
+    color: rgb(255, 255, 255);
+}
