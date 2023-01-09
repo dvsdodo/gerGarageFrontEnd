@@ -14,6 +14,8 @@ import CreateUserPage from './pages/CreateUser';
 import { AuthProvider, AuthContext } from "./contexts/auth";
 import Vehicle from "./pages/Vehicle";
 import Booking from "./pages/Booking";
+import Admin from "./pages/Admin";
+import Invoice from "./pages/Invoice";
 
 const AppRoutes = () => {
     const Private = ({ children }) => {
@@ -39,6 +41,8 @@ const AppRoutes = () => {
                     <Route exact path="/createUser" element={<CreateUserPage />} />
                     <Route exact path="/vehicle" element={<Vehicle />} />
                     <Route exact path="/booking" element={<Booking />} />
+                    <Route exact path="/admin" element={<Admin />} />
+                    <Route exact path="/invoice" element={<Invoice />} />
                 </Routes>
             </AuthProvider>
         </Router>

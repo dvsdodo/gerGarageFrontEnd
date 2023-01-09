@@ -61,11 +61,15 @@ const HomePage = () => {
 
     const handleVehicle = () => {
         navigate("/vehicle");
-      };
-    
-      const handleBooking = () => {
+    };
+
+    const handleBooking = () => {
         navigate("/booking");
-      };
+    };
+
+    const handleInvoice = () => {
+        navigate("/invoice");
+    };
 
     const next = () => {
         if (animating) return;
@@ -128,7 +132,7 @@ const HomePage = () => {
                     items={items}
                     activeIndex={activeIndex}
                     onClickHandler={goToIndex}
-                    
+
                 />
                 {slides}
                 <CarouselControl
@@ -229,7 +233,7 @@ const HomePage = () => {
                             <CardText>
                                 See your latest invoice by clicking the button below.
                             </CardText>
-                            <Button>
+                            <Button onClick={handleInvoice}>
                                 View
                             </Button>
                         </CardBody>

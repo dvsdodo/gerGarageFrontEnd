@@ -1,55 +1,84 @@
-#createUser {
+.create_container form {
+    width: 100%;
+    margin: 2em 0;
+}
+
+.container-barder {
+    width: 100;
+    min-width: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.border {
+    width: 590px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 55px 10px 55px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.create_container {
+    width: 450px;
+    margin: 0 auto;
+    padding: 3em;
+    
+}
+
+.create_container h1 {
+    margin-bottom: 0.5em;
+    color: aliceblue;
+}
+
+.create_container p {
+    color: #faf6f6;
+    font-weight: bold;
+}
+
+.field {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 0 2rem;
+    margin-bottom: 1em;
+    color: rgb(250, 248, 246);
 }
 
-#createUser .form {
-    background-color: rgb(66, 63, 253);
-    width: 100%;
-    max-width: 480px;
-    padding: 0.5rem;
+.field label {
+    margin-bottom: .6em;
+    font-weight: bold;
 }
 
-#createUser .field {
-    padding-bottom: 0.5rem;
+.field input {
+    padding: 0.7em;
+    border-radius: 0;
+    border: none;
 }
 
-#createUser .field label {
-    display: block;
+.field input::placeholder {
+    color: azure;
 }
 
-#createUser .field input {
-    width: 100%;
+.text-center {
+    color: aliceblue;
 }
 
-#createUser .actions {
-    text-align: center;
-    margin-top: 1rem;
+.actions {
+    padding-bottom: 2em;
+    padding-top: 1em;
 }
 
-#createUser .text-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: 50px;
-}
-
-#createUser .txt1 {
-    font-size: 14px;
-    color: #d2caf8;
-    line-height: 01;
+.btonback {
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 0.7em 1.2em;
     text-decoration: none;
-    padding-right: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    border: none;
 }
 
-#createUser .txt2 {
-    font-size: 14px;
-    color: #2c1710;
-    line-height: 1;
-    text-decoration: none;
+.btonback:hover {
+    color: rgb(255, 255, 255);
 }

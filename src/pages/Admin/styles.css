@@ -1,0 +1,34 @@
+.admin_container {
+    width: 450px;
+    margin: 0 auto;
+    padding: 3em;
+    
+}
+
+.admin_container h1 {
+    margin-bottom: 0.5em;
+    color: aliceblue;
+}
+
+.admin_container p {
+    color: #faf6f6;
+    font-weight: bold;
+}
+
+.border {
+    width: 590px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 55px 10px 55px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.container-barder {
+    width: 100;
+    min-width: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

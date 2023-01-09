@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
         }
         setLoading(false);
     }, []);
-
+    
     const login = async (username, password) => {
 
         const response = await createSession(username, password);
@@ -39,7 +39,14 @@ export const AuthProvider = ({ children }) => {
         api.defaults.headers.Authorization = `Bearer ${token}`;
 
         setUser(loggedUser);
-        navigate("/");
+
+        
+       // if (user.is_admin === 0) {
+            navigate("/");
+       // } else {
+       //     navigate("/admin")
+        //}
+        
 
         /*if (response.data.length === 0) {
             console.log("User not found")

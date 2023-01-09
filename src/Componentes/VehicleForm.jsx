@@ -30,8 +30,6 @@ function VehicleForm({ btnText }) {
     const [vehicle_comment, setVehiclecomment] = useState("");
     const [vehicle_licence, setVehiclelicence] = useState("");
 
-    console.log(id_user);
-
     useEffect(() => {
         (async () => {
             const response = await getType();
