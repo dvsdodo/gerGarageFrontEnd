@@ -24,6 +24,10 @@ export const getEngineType = async () => {
     return api.get("/listEngineType");
 };
 
+export const getBooking = async () => {
+    return api.get("/listBooking");
+};
+
 export const getBookingService = async () => {
     return api.get("/listBookingService");
 };

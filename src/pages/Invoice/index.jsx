@@ -1,3 +1,4 @@
+import InvoiceForm from "../../Componentes/InvoiceForm";
 import Menu from "../../Componentes/Menu";
 import "./styles.css";
 
@@ -9,6 +10,7 @@ function Invoice() {
                 <div className="border">
                     <div className="invoice_container">
                         <h1>Invoice Page</h1>
+                        <InvoiceForm />
                     </div>
                 </div>
             </div>

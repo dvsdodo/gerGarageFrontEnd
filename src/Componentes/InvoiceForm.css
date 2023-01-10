@@ -1,0 +1,29 @@
+.form {
+    width: 100%;
+    margin: 2em 0;
+}
+
+.invoice-print {
+    background-color: bisque;
+    color: black;
+}
+
+.invoice-print h3 {
+    color: rgb(0, 0, 0);
+    padding: 1.5em;
+}
+
+.invoice-print p {
+    color: rgb(0, 0, 0);
+    padding: 0.5em;
+}
+
+.invoice-print h2 {
+    color: rgb(0, 0, 0);
+    padding-left: 3em;
+}
+
+.view {
+    background-color: brown;
+    color: azure;
+}

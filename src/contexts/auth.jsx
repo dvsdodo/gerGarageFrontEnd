@@ -34,6 +34,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem("user", JSON.stringify(loggedUser.id_user));
         localStorage.setItem("name", JSON.stringify(loggedUser.name));
         localStorage.setItem("admin", JSON.stringify(loggedUser.is_admin));
+        localStorage.setItem("phone_number", JSON.stringify(loggedUser.phone_number));
         localStorage.setItem("token", token);
 
         api.defaults.headers.Authorization = `Bearer ${token}`;
@@ -41,11 +42,11 @@ export const AuthProvider = ({ children }) => {
         setUser(loggedUser);
 
         
-       // if (user.is_admin === 0) {
-            navigate("/");
-       // } else {
-       //     navigate("/admin")
+        //if (user.is_admin === 1) {
+            navigate("/admin");
         //}
+            //navigate("/")
+        
         
 
         /*if (response.data.length === 0) {
@@ -58,9 +59,14 @@ export const AuthProvider = ({ children }) => {
         }*/
     };
 
+    const isAdmin = localStorage.getItem("admin"); 
+
     const logout = () => {
         console.log("logout");
         localStorage.removeItem("user");
+        localStorage.removeItem("name");
+        localStorage.removeItem("admin");
+        localStorage.removeItem("phone_number");
         localStorage.removeItem("token");
         api.defaults.headers.Authorization = null;
         setUser(null);
@@ -88,7 +94,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ authenticated: !!user, user, loading,login, logout, newUser, newVehicle,newBooking }}>
+        <AuthContext.Provider value={{ authenticated: !!user, user, loading,login, logout, newUser, newVehicle, newBooking, isAdmin }}>
             { children }
         </AuthContext.Provider>
     )

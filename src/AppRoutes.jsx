@@ -17,9 +17,14 @@ import Booking from "./pages/Booking";
 import Admin from "./pages/Admin";
 import Invoice from "./pages/Invoice";
 
+
 const AppRoutes = () => {
+    const is_admin = localStorage.getItem("admin");
+    console.log(is_admin);
+
     const Private = ({ children }) => {
         const { authenticated, loading } = useContext(AuthContext);
+        
 
         if (loading) {
             return <div className="loading">Loading...</div>
@@ -41,7 +46,7 @@ const AppRoutes = () => {
                     <Route exact path="/createUser" element={<CreateUserPage />} />
                     <Route exact path="/vehicle" element={<Vehicle />} />
                     <Route exact path="/booking" element={<Booking />} />
-                    <Route exact path="/admin" element={<Admin />} />
+                    <Route exact path="/admin" element={is_admin === "1" ? <Admin /> : <Navigate replace to='/'/>} />
                     <Route exact path="/invoice" element={<Invoice />} />
                 </Routes>
             </AuthProvider>
