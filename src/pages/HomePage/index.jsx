@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Menu from "../../Componentes/Menu";
 import "./styles.css";
-import { getUsers } from "../../services/api";
+//import { getUsers } from "../../services/api";
 import {
     Carousel,
     CarouselItem,
@@ -52,8 +52,8 @@ const items = [
 
 const HomePage = () => {
 
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
+    //const [users, setUsers] = useState([]);
+    //const [loading, setLoading] = useState(true);
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
@@ -104,7 +104,7 @@ const HomePage = () => {
         );
     });
 
-    useEffect(() => {
+    /*useEffect(() => {
         (async () => {
             const response = await getUsers();
             setUsers(response.data.result);
@@ -116,7 +116,7 @@ const HomePage = () => {
 
     if (loading) {
         return <div className="loading">Loading...</div>;
-    };
+    };*/
 
     return (
         <div className="main-home">
@@ -240,16 +240,6 @@ const HomePage = () => {
                     </Card>
                 </Col>
             </Row>
-
-            <ul className="teste">
-                {
-                    users.map((user) => (
-                        <li key={user.id_user}>
-                            {user.id_user} - {user.name} - {user.username}
-                        </li>
-                    ))
-                }
-            </ul>
 
         </div>
 
