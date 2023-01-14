@@ -1,0 +1,30 @@
+.form {
+    width: 100%;
+    margin: 2em 0;
+}
+
+.adminForm-print {
+    background-color: rgb(29, 0, 107);
+    color: rgb(255, 174, 174);
+    margin-top: 1em;
+}
+
+.adminForm-print h3 {
+    color: rgb(247, 247, 247);
+    padding: 1.5em;
+}
+
+.adminForm-print p {
+    color: rgb(235, 233, 233);
+    padding: 0.5em;
+}
+
+.adminForm-print h2 {
+    color: rgb(245, 242, 242);
+    padding-left: 3em;
+}
+
+.view {
+    background-color: brown;
+    color: azure;
+}

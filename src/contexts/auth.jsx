@@ -2,7 +2,7 @@ import React, { useState, useEffect, createContext } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { api, createBooking, createSession, createUser, createVehicle } from "../services/api";
+import { api, createBooking, createSession, createUser, createVehicle, updateBooking } from "../services/api";
 
 export const AuthContext = createContext();
 
@@ -93,8 +93,14 @@ export const AuthProvider = ({ children }) => {
         console.log(response.data);
     };
 
+    const newUpdateBooking = async (value) => {
+        const response = await updateBooking(value.id_booking, value.id_staff);
+        console.log(response.data);
+        //console.log(value);
+    };
+
     return (
-        <AuthContext.Provider value={{ authenticated: !!user, user, loading,login, logout, newUser, newVehicle, newBooking, isAdmin }}>
+        <AuthContext.Provider value={{ authenticated: !!user, user, loading,login, logout, newUser, newVehicle, newBooking, isAdmin, newUpdateBooking }}>
             { children }
         </AuthContext.Provider>
     )

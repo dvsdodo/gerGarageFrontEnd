@@ -19,8 +19,6 @@ import Invoice from "./pages/Invoice";
 
 
 const AppRoutes = () => {
-    const is_admin = localStorage.getItem("admin");
-    console.log(is_admin);
 
     const Private = ({ children }) => {
         const { authenticated, loading } = useContext(AuthContext);
@@ -37,6 +35,25 @@ const AppRoutes = () => {
         return children;
     };
 
+    const AdminPrivate = ({ children }) => {
+        const { authenticated, loading, user } = useContext(AuthContext);
+        console.log(user);
+        
+
+        if (loading) {
+            return <div className="loading">Loading...</div>
+        }
+
+        if (!authenticated) {
+            return <Navigate to="/login"/>;
+        }
+        if (user.is_admin === 0) {
+            return <Navigate to="/"/>
+        }
+
+        return children;
+    };
+
     return(
         <Router>
             <AuthProvider>
@@ -46,7 +63,7 @@ const AppRoutes = () => {
                     <Route exact path="/createUser" element={<CreateUserPage />} />
                     <Route exact path="/vehicle" element={<Vehicle />} />
                     <Route exact path="/booking" element={<Booking />} />
-                    <Route exact path="/admin" element={is_admin === "1" ? <Admin /> : <Navigate replace to='/'/>} />
+                    <Route exact path="/admin" element={<AdminPrivate><Admin /></AdminPrivate>} />
                     <Route exact path="/invoice" element={<Invoice />} />
                 </Routes>
             </AuthProvider>
