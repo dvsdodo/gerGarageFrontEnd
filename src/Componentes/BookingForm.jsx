@@ -7,6 +7,7 @@ import SelectBookingService from "./form/selectBookingService";
 import SelectVehicle from "./form/selectVehicle";
 import { AuthContext } from "../contexts/auth";
 import SelectSlots from "./form/SelectSlots";
+import { useNavigate } from "react-router-dom";
 
 function BookingForm({ btnText }) {
 
@@ -25,6 +26,7 @@ function BookingForm({ btnText }) {
     const [id_status, setIdStatus] = useState(1);
     const [id_slots, setIdSlots] = useState(0);
     const [date, setDate] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
@@ -90,6 +92,7 @@ function BookingForm({ btnText }) {
         await setIdStatus(1);
         console.log("submit", { id_vehicle, id_status, date, id_booking_service, id_slots });
         await newBooking({ id_vehicle, id_status, date, id_booking_service, id_slots });
+        await navigate("/");
     };
 
     return (
@@ -108,12 +111,12 @@ function BookingForm({ btnText }) {
                 />
             </FormGroup>
             <FormGroup className="label">
-                <SelectSlots 
+                <SelectSlots
                     name="id_slots"
                     text="Select a Time"
                     options={Slots}
                     handleOnChange={handleSlots}
-                    value={SlotsSelected.Slots ? SlotsSelected.Slots.id_slots : ""}               
+                    value={SlotsSelected.Slots ? SlotsSelected.Slots.id_slots : ""}
                 />
                 <SelectBookingService
                     name="id_booking_service"
