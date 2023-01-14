@@ -83,7 +83,7 @@ const AdminForm = ({ onEdit }) => {
                         value={BookingSelected.Booking ? BookingSelected.Booking.id_booking : ""}
                     />
                 </form>
-                <button className="view" type="submit" onClick={handleNameStaff}>Set</button>
+                <button className="view" type="submit" onClick={handleNameStaff}>View</button>
             </div>
             <div>
                 <form className="form">
